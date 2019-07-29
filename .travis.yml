@@ -1,0 +1,10 @@
+# references:
+# * http://www.objc.io/issue-6/travis-ci.html
+# * https://github.com/supermarin/xcpretty#usage
+
+language: swift
+osx_image: xcode10
+xcode_project: PCCA-VSC.xcodeproj
+xcode_scheme: PCCA-VSC
+script:
+  - set -o pipefail && xcodebuild -project PCCA-VSC.xcodeproj -scheme PCCA-VSC -sdk iphonesimulator12.0 clean build | xcpretty
